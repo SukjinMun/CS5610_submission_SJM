@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML + CSS + JavaScript self assessment</title>
+    <meta name="description" content="Notes on semantic HTML, SEO tags, the box model, font size units, and positioning." />
+    <meta name="author" content="Suk Jin Mun" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sukjinmun.github.io/CS5610_submission_SJM/html_css_js_self_assessment/" />
+    <meta property="og:title" content="HTML + CSS + JavaScript self assessment" />
+    <meta property="og:description" content="One page of notes on HTML structure, the box model, units, and positioning." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sukjinmun.github.io/CS5610_submission_SJM/html_css_js_self_assessment/" />
+    <meta property="og:image" content="https://sukjinmun.github.io/CS5610_submission_SJM/html_css_js_self_assessment/images/preview.png" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Part 1 -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main">
+        <a class="brand" href="#top">Self assessment</a>
+        <ul class="nav-list">
+          <li><a href="#html">HTML</a></li>
+          <li><a href="#seo">SEO</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="#box">Box model</a></li>
+          <li><a href="#units">Units</a></li>
+          <li><a href="#position">Positioning</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top" class="content">
+      <h1>HTML + CSS + JavaScript self assessment</h1>
+
+      <section id="html" class="card">
+        <h2>1. The ten most useful HTML tags for me</h2>
+        <p>
+          Each item names one tag, says what the tag is, and points at where this page uses it. The next most useful are
+          h2 to h6, ol, header, nav, main, and footer.
+        </p>
+        <ol class="tag-list">
+          <li><strong>div</strong>, a block container with no meaning. It groups elements so one rule can style them at once. The grid rows below are divs.</li>
+          <li><strong>span</strong>, an inline container with no meaning. It wraps text without starting a new line. The grid cells below are spans.</li>
+          <li><strong>a</strong>, a link that turns its content into a jump to another address. It is what makes a document hypertext instead of a plain file. An href pointing at an id moves inside the page with no script. Each navbar item is an a pointing at a section id.</li>
+          <li><strong>img</strong>, a single tag that embeds an image where it sits. One tag pulls an outside file into the flow. Its src gives the address, and its alt is the only wording a screen reader or a crawler gets. The box model section has one.</li>
+          <li><strong>p</strong>, a paragraph of running text. It is a block, so each one starts on a new line. It is the default holder for prose, so text gets its own block with no CSS. Every note on this page is a p.</li>
+          <li><strong>h1</strong>, the top heading for the page content. The title line at the top of this page is the h1. A search result, the browser tab, and screen readers all lean on that one line. That is why a page gets exactly one.</li>
+          <li><strong>ul</strong>, a list whose items have no order. It groups items whose order carries no meaning, and one rule then styles every item in it. The navbar links and the SEO list are ul elements.</li>
+          <li><strong>li</strong>, one item inside a ul or an ol. It is the only element a list holds, so a marker and an indent come with no CSS. Every item in this list, the SEO list, the font size list, and the navbar is an li.</li>
+          <li><strong>section</strong>, a block of related content with its own heading. The h2 inside it puts the part into the heading outline that search engines and screen readers use. The tag itself marks one theme instead of a meaningless div. Each numbered part of this page is a section.</li>
+          <li><strong>meta</strong>, a head element that carries data about the document. It describes the page to browsers and search engines. The description, viewport, and charset tags in this head are metas.</li>
+        </ol>
+      </section>
+
+      <!-- Part 2 -->
+      <section id="seo" class="card">
+        <h2>2. Head and heading tags that matter for SEO</h2>
+        <p>
+          The head holds data about the document instead of content for the screen. Search engines read it first, then
+          read the heading outline. This page uses every tag below.
+        </p>
+        <ul class="seo-list">
+          <li><strong>title</strong>. Gives the title of the whole document. A search result and the browser tab both show it.</li>
+          <li><strong>meta name="description"</strong>. Sums the page up in one line. A search result prints it under the title.</li>
+          <li><strong>meta name="viewport"</strong>. Lays the page out at the width of the device, so a phone screen gets a readable page. Search engines index the mobile version first, so the phone layout decides the ranking.</li>
+          <li><strong>meta charset="utf-8"</strong>. Tells the browser which character encoding the file uses. utf-8 covers nearly every character in any language. Text that a crawler cannot decode cannot be indexed.</li>
+          <li><strong>meta name="author"</strong>. Names who wrote the page, so a reader with a question knows who to ask. It is useful metadata, not a strong search signal.</li>
+          <li><strong>meta name="robots"</strong>. Tells a crawler whether to index this page and whether to follow its links. This page says index and follow, so it can appear in results at all.</li>
+          <li><strong>link rel="canonical"</strong>. Names the one address that counts as the real home of this page. A search engine then credits that address instead of splitting the credit across duplicates.</li>
+          <li><strong>meta property="og:title", "og:description", "og:image", "og:url"</strong>. Set the title, text, picture, and address of the preview card on social sites. Without them a shared link shows whatever text and picture the crawler picks first. A clear card earns more clicks and more links back to the page.</li>
+          <li><strong>html lang="en"</strong>. Names the main language of the document. Search engines index it better and screen readers pronounce it right.</li>
+          <li><strong>One h1 and headings in order</strong>. The h1 titles the page content and belongs once per page. Crawlers build the outline from the heading order.</li>
+          <li><strong>alt on every img</strong>. Describes the picture in words for anyone who cannot see it. A crawler has no other text for an image.</li>
+        </ul>
+      </section>
+
+      <!-- Part 3 -->
+      <section id="grid" class="card">
+        <h2>3. A 3 by 3 grid with divs and spans and no CSS</h2>
+        <p>
+          A block box breaks onto a new line and fills the width of its container. So each div becomes one row. An
+          inline box stays on the current line beside its neighbours. So the three spans inside a div become three
+          cells. No table and no CSS rule build this grid.
+        </p>
+        <div>
+          <div><span>row 1, cell 1</span> <span>row 1, cell 2</span> <span>row 1, cell 3</span></div>
+          <div><span>row 2, cell 1</span> <span>row 2, cell 2</span> <span>row 2, cell 3</span></div>
+          <div><span>row 3, cell 1</span> <span>row 3, cell 2</span> <span>row 3, cell 3</span></div>
+        </div>
+      </section>
+
+      <!-- Part 4 -->
+      <section id="box" class="card">
+        <h2>4. Box model gallery</h2>
+        <p>Every box is four nested areas. From the middle out:</p>
+        <table class="spec">
+          <tr><th>Area</th><th>Where</th><th>What it does</th><th>Property</th></tr>
+          <tr><td>content</td><td>the middle</td><td>holds the text or the image, sized by width and height</td><td>width, height</td></tr>
+          <tr><td>padding</td><td>inside the border</td><td>clear space around the content, painted with the background</td><td>padding</td></tr>
+          <tr><td>border</td><td>the edge</td><td>the line drawn around the padding</td><td>border</td></tr>
+          <tr><td>margin</td><td>outside the border</td><td>transparent space that pushes other boxes away</td><td>margin</td></tr>
+        </table>
+        <img class="figure" src="images/preview.png" alt="Diagram of one box drawn as four nested rings labeled content, padding, border, and margin" />
+        <table class="spec">
+          <tr><th>box-sizing</th><th>What width means</th></tr>
+          <tr><td>content-box, the default</td><td>the content only, padding and border add on top</td></tr>
+          <tr><td>border-box, used on this page</td><td>content plus padding plus border, margin still outside</td></tr>
+        </table>
+        <p>
+          box-sizing does not inherit. This page sets border-box on html, then one rule gives every element
+          box-sizing inherit, except the grid in Part 3.
+        </p>
+        <table class="spec">
+          <tr><th></th><th>Block box, a div</th><th>Inline box, a span</th></tr>
+          <tr><td>new line</td><td>starts one</td><td>stays in the line</td></tr>
+          <tr><td>width, height</td><td>apply</td><td>ignored</td></tr>
+          <tr><td>top and bottom margin</td><td>apply</td><td>ignored</td></tr>
+          <tr><td>top and bottom padding, border</td><td>push lines apart</td><td>drawn, but do not push lines apart</td></tr>
+          <tr><td>left and right padding, border, margin</td><td>apply</td><td>apply, move the text beside it</td></tr>
+        </table>
+        <p>Gallery. Rows change one area, the last row all three. Dashed grey line, the margin edge. Blue, the border. Light blue band, the padding. Pale middle, the content.</p>
+        <div class="gallery">
+          <div class="gallery-row gallery-head">
+            <span class="row-label"></span>
+            <span class="col-label">0px</span>
+            <span class="col-label">5px</span>
+            <span class="col-label">10px</span>
+          </div>
+          <div class="gallery-row">
+            <span class="row-label">border</span>
+            <div class="frame"><div class="box border-0">border: 0</div></div>
+            <div class="frame"><div class="box border-5">border: 5px</div></div>
+            <div class="frame"><div class="box border-10">border: 10px</div></div>
+          </div>
+          <div class="gallery-row">
+            <span class="row-label">margin</span>
+            <div class="frame"><div class="box margin-0">margin: 0</div></div>
+            <div class="frame"><div class="box margin-5">margin: 5px</div></div>
+            <div class="frame"><div class="box margin-10">margin: 10px</div></div>
+          </div>
+          <div class="gallery-row">
+            <span class="row-label">padding</span>
+            <div class="frame"><div class="box padding-0">padding: 0</div></div>
+            <div class="frame"><div class="box padding-5">padding: 5px</div></div>
+            <div class="frame"><div class="box padding-10">padding: 10px</div></div>
+          </div>
+          <div class="gallery-row">
+            <span class="row-label">all three</span>
+            <div class="frame"><div class="box all-0">all: 0</div></div>
+            <div class="frame"><div class="box all-5">all: 5px</div></div>
+            <div class="frame"><div class="box all-10">all: 10px</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 5 -->
+      <section id="units" class="card">
+        <h2>5. The same text in six font sizes</h2>
+        <p>
+          Each item carries its own inline style attribute. Two units are absolute, px and pt. An absolute unit does not
+          depend on a parent element or on the window. Four units are relative, em, rem, percent, and vw. A relative
+          unit takes its size from something else, such as a parent element or the window. JavaScript appends the computed pixel size to each item.
+        </p>
+        <ul class="unit-list">
+          <li style="font-size: 12px;">
+            The quick brown fox jumps over the lazy dog. <em>12px, absolute.</em> One px is 1/96 of an inch. It is the
+            one absolute unit in common use on screen. Use px for a size that must hold steady, such as a 12px chart
+            caption.
+          </li>
+          <li style="font-size: 14pt;">
+            The quick brown fox jumps over the lazy dog. <em>14pt, absolute.</em> A point is 1/72 of an inch. A point comes
+            from print, so pt fits paper better than a screen. Use pt in a print stylesheet, such as 14pt body text.
+          </li>
+          <li style="font-size: 1.5em;">
+            The quick brown fox jumps over the lazy dog. <em>1.5em, relative to the parent font size.</em> For a font
+            size, one em is the parent font size. For anything else, one em is the font size of the element itself.
+            Nesting compounds it, because each level multiplies its parent again. So 1.5em grows at every step, while a
+            value under one would shrink at every step. Use em for spacing that scales with nearby text, such as 0.5em
+            padding in a button.
+          </li>
+          <li style="font-size: 1.25rem;">
+            The quick brown fox jumps over the lazy dog. <em>1.25rem, relative to the root font size.</em> The name
+            stands for root em. It always reads the font size of the root element, so nesting never compounds it. Use
+            rem for text sizes that repeat across the page, such as h2 at 1.5rem.
+          </li>
+          <li style="font-size: 80%;">
+            The quick brown fox jumps over the lazy dog. <em>80%, relative to the parent.</em> A percentage is always a
+            fraction of some other value. For a font size that other value is the parent font size. Use a percentage
+            for text that should follow its parent, such as a footnote at 80%.
+          </li>
+          <li style="font-size: 3.5vw;">
+            The quick brown fox jumps over the lazy dog. <em>3.5vw, relative to the viewport width.</em> One vw is one
+            percent of the viewport width. The size changes whenever the window changes. Use vw for a hero heading that
+            shrinks on a phone. Resize the window to watch it change.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Part 6 -->
+      <section id="position" class="card">
+        <h2>6. Positioning options</h2>
+        <p>
+          Normal flow stacks boxes top to bottom. The position property moves a box out of that order. All five values
+          are live here. Scroll the page and watch the sticky note.
+        </p>
+        <div class="stage">
+          <div class="sticky-note">
+            <code>position: sticky; top: 3rem;</code> pins under the navbar while this panel is on screen
+          </div>
+          <div class="static-box">
+            <code>position: static;</code> stays where normal flow puts it, top and left do nothing
+          </div>
+          <div class="relative-box">
+            <code>position: relative; top: 10px; left: 20px;</code> shifted from its slot, the slot stays empty
+            <span class="absolute-badge">absolute</span>
+          </div>
+          <p class="note"><code>position: absolute; top: 0; right: 0;</code> the badge, measured from the yellow box, its nearest positioned ancestor</p>
+          <p class="note"><code>position: fixed; bottom: 0;</code> the footer, measured from the viewport</p>
+          <p class="note">Scroll on. The sticky note holds until this panel leaves the screen.</p>
+        </div>
+        <table class="spec">
+          <tr><th>Value</th><th>Where the box goes</th><th>Keeps its space</th><th>Use it for</th></tr>
+          <tr><td>static</td><td>where normal flow puts it</td><td>yes</td><td>almost everything</td></tr>
+          <tr><td>relative</td><td>its flow spot, then shifted by top, left, bottom, right</td><td>yes, the gap stays</td><td>small nudges, the reference box for an absolute child</td></tr>
+          <tr><td>absolute</td><td>measured from the nearest positioned ancestor, or the page if none</td><td>no</td><td>badges, tooltips, close buttons</td></tr>
+          <tr><td>sticky</td><td>in flow until it reaches its threshold, then pinned while its parent is on screen</td><td>yes</td><td>navbars, table headings</td></tr>
+          <tr><td>fixed</td><td>measured from the viewport, stays put while the page scrolls</td><td>no</td><td>footer bar, back to top button</td></tr>
+        </table>
+        <p class="note">A box out of flow can cover another. z-index picks the top one, the navbar at 10, the sticky note at 1.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Suk Jin Mun</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>
