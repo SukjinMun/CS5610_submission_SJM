@@ -1,0 +1,24 @@
+{
+  "name": "js-dom-self-assessment",
+  "version": "1.0.0",
+  "description": "Airbnb San Francisco listings loaded with fetch and rendered in the DOM.",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx -y http-server . -p 8080 -o",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "author": "Suk Jin Mun",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@html-eslint/eslint-plugin": "^0.32.0",
+    "@html-eslint/parser": "^0.32.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-html": "^8.1.2",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2"
+  }
+}

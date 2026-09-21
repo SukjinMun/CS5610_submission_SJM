@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Airbnb listings, San Francisco</title>
+    <meta
+      name="description"
+      content="Fifty San Francisco Airbnb listings loaded from a JSON file with fetch, with search, sorting, a price histogram, and a compare bar."
+    />
+    <meta name="author" content="Suk Jin Mun" />
+    <link
+      rel="canonical"
+      href="https://sukjinmun.github.io/CS5610_submission_SJM/js_dom_self_assessment/"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="module" src="scripts/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <h1>Airbnb listings, San Francisco</h1>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="./">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Filters">
+        <div class="filters">
+          <p class="field">
+            <label for="search">Search by name or neighborhood</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="condo, studio, Mission"
+            />
+          </p>
+          <p class="field">
+            <label for="sort">Sort</label>
+            <select id="sort">
+              <option value="default">Default order</option>
+              <option value="price-asc">Price, low to high</option>
+              <option value="price-desc">Price, high to low</option>
+              <option value="rating">Rating, high to low</option>
+            </select>
+          </p>
+        </div>
+
+        <h2 class="hist-title">Price distribution</h2>
+        <p class="hint">
+          Click a bar to keep only listings in that price range.
+        </p>
+        <div id="histogram" class="histogram"></div>
+
+        <p id="count" class="count">Loading listings</p>
+      </section>
+
+      <section id="listings" class="listings" aria-label="Listings"></section>
+    </main>
+
+    <aside
+      id="compareBar"
+      class="compare-bar is-empty"
+      aria-label="Compared listings"
+    >
+      <div class="compare-head">
+        <h2>Compare</h2>
+        <button id="compareClear" type="button">Clear</button>
+      </div>
+      <div id="compareItems" class="compare-items"></div>
+    </aside>
+
+    <footer class="site-footer">
+      <p>Suk Jin Mun</p>
+      <p><a href="#top">Back to top</a></p>
+    </footer>
+  </body>
+</html>

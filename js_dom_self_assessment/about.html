@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About, Airbnb listings, San Francisco</title>
+    <meta
+      name="description"
+      content="What the Airbnb listings page does and where its data comes from."
+    />
+    <meta name="author" content="Suk Jin Mun" />
+    <link
+      rel="canonical"
+      href="https://sukjinmun.github.io/CS5610_submission_SJM/js_dom_self_assessment/about.html"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <h1>About this page</h1>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="./">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="prose">
+        <p>
+          The home page loads a local JSON file with fetch and await, takes the
+          first fifty listings, and builds one card per listing in the DOM. Each
+          card shows the photo, name, price, host name and photo, rating,
+          description, and amenities.
+        </p>
+        <p>
+          The controls filter by name, sort by price or rating, and report how
+          many of the fifty are on screen. The price histogram splits the fifty
+          prices into ten buckets, and clicking a bar narrows the list to that
+          range. Up to three cards can be checked for comparison, and those
+          appear side by side in a bar at the bottom of the window.
+        </p>
+        <p>
+          The data is the San Francisco listings file from Inside Airbnb,
+          September 2023, trimmed to the first five hundred rows.
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Suk Jin Mun</p>
+      <p><a href="#top">Back to top</a></p>
+    </footer>
+  </body>
+</html>
